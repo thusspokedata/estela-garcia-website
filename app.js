@@ -16,6 +16,9 @@ require("./config")(app);
 
 // 👇 Start handling routes here
 // Contrary to the views version, all routes are controlled from the routes/index.js
+const nodemailer = require("./routes/nodemailer");
+app.use("/api/email", nodemailer);
+
 const allRoutes = require("./routes/index.routes");
 app.use("/api", allRoutes);
 
