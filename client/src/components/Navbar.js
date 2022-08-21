@@ -1,13 +1,22 @@
-import { Nav, Navbar, Container } from 'react-bootstrap'
+import { Nav, Navbar, Container } from "react-bootstrap";
 
 function NavBar() {
   return (
-    <div className='navbar'>
-      <Navbar variant="dark"
-        sticky="top" expand="md" collapseOnSelect className="p-1">
+    <div className="navbar">
+      <Navbar
+        variant="dark"
+        sticky="top"
+        expand="md"
+        collapseOnSelect
+        className="p-1"
+      >
         <Container>
-
-          <Navbar.Brand href="/" style={{fontFamily:'Kaushan Script',fontSize:'1.7rem'}}>Estela Gracia</Navbar.Brand>
+          <Navbar.Brand
+            href="/"
+            style={{ fontFamily: "Kaushan Script", fontSize: "1.7rem" }}
+          >
+            Estela García
+          </Navbar.Brand>
 
           <Navbar.Toggle />
           <Navbar.Collapse>
@@ -17,7 +26,7 @@ function NavBar() {
               <Nav.Link href="#gallery">Gallery</Nav.Link>
               <Nav.Link href="#multiMedia">Multi-Media</Nav.Link>
               <Nav.Link href="#event">Event</Nav.Link>
-              <Nav.Link href="#contact">Contact</Nav.Link>
+              <Nav.Link href="/contact">Contact</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
