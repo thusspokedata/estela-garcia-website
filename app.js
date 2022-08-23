@@ -25,6 +25,9 @@ app.use("/api/email", nodemailer);
 const allRoutes = require("./routes/index.routes");
 app.use("/api", allRoutes);
 
+const galleryRoute = require("./routes/gallery");
+app.use("/api", galleryRoute);
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
