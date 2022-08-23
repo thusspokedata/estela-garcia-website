@@ -35,7 +35,7 @@ function ContactPage() {
 
   return (
     <Container className="d-flex justify-content-center mt-3">
-      <Row className="col-6">
+      <Row className="col-12 col-sm-12 col-lg-6">
         <Form action="/api/email/send-email" method="post">
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Email address</Form.Label>
