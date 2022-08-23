@@ -2,18 +2,18 @@ function Footer() {
   const [name1, name2] = [" Wen-hsuan Liao ", " ThusSpokeData "];
 
   return (
-    <div className="navbar">
-      <footer class="bg-white fixed-bottom">
-        <div class="py-0 border-top">
-          <div class="container d-flex flex-column flex-sm-row justify-content-between">
-            <p class="copyright fs-6 fw-lighter">
+    <div>
+      <footer className="bg-white fixed-bottom">
+        <div className="py-0 border-top">
+          <div className="container d-flex flex-column flex-sm-row justify-content-between">
+            <p className="copyright fs-6 fw-lighter">
               <small>
                 © 2022 · Made with ❤️ by
                 <a
                   rel="nofollow"
                   href="https://www.linkedin.com/in/wen-hsuan-liao-berlin/"
                   target="_blank"
-                  class="text-dark"
+                  className="text-dark"
                 >
                   {name1}
                 </a>
@@ -22,7 +22,7 @@ function Footer() {
                   rel="nofollow"
                   href="https://thusspokedata.com/"
                   target="_blank"
-                  class="text-dark"
+                  className="text-dark"
                 >
                   {name2}
                 </a>
@@ -34,7 +34,7 @@ function Footer() {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-box-arrow-in-right"
+                className="bi bi-box-arrow-in-right"
                 viewBox="0 0 16 16"
               >
                 <path
