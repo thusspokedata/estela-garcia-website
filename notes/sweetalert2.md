@@ -1,5 +1,6 @@
 ```bash
-npm i sweetalert2@6.6.1
+npm i --save sweetalert2
+npm i sweetalert2@6.6.1 --dont use it---
 ```
 
 ```js
