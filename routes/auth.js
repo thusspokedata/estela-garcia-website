@@ -1,7 +1,7 @@
-const router = require("express").Router();
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const { isAuthenticated } = require("../middlewares/jwt");
+// const router = require("express").Router();
+// const bcrypt = require("bcryptjs");
+// const jwt = require("jsonwebtoken");
+// const { isAuthenticated } = require("../middlewares/jwt");
 // const nodemailer = require("nodemailer");
 // const User = require("../models/User");
 
