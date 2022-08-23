@@ -36,7 +36,7 @@ function ContactPage() {
 
   return (
     <Container>
-      <Row className="col-10">
+      <Row>
         <Form action="/api/email/send-email" method="post">
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Email address</Form.Label>

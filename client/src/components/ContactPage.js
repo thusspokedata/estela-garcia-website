@@ -34,8 +34,8 @@ function ContactPage() {
   };
 
   return (
-    <Container>
-      <Row className="col-10">
+    <Container className="d-flex justify-content-center mt-3">
+      <Row className="col-6">
         <Form action="/api/email/send-email" method="post">
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Email address</Form.Label>
@@ -71,7 +71,7 @@ function ContactPage() {
           </Form.Group>
           <Modal.Footer>
             <Button
-              variant="dark text-white col-6 mx-auto"
+              variant="dark text-white col-12 mx-auto"
               type="submit"
               onClick={handleSubmit}
             >
