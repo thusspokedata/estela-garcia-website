@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage.js";
 import NavBar from "./components/Navbar";
 import ContactPage from "./components/ContactPage";
-// import GalleryPage from "./components/GalleryPage";
+import GalleryPage from "./pages/GalleryPage.js";
+
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/gallery" element={<GalleryPage />} /> */}
+        <Route path="/upload-photos" element={<GalleryPage />} />
 
         <Route path="/contact" element={<ContactPage />} />
       </Routes>

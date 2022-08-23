@@ -23,7 +23,7 @@ function NavBar() {
             <Nav>
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="#aboutMe">About Me</Nav.Link>
-              <Nav.Link href="#gallery">Gallery</Nav.Link>
+              <Nav.Link href="/upload-photos">Gallery</Nav.Link>
               <Nav.Link href="#multiMedia">Multi-Media</Nav.Link>
               <Nav.Link href="#event">Event</Nav.Link>
               <Nav.Link href="/contact">Contact</Nav.Link>
