@@ -1,37 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Kaushan+Script&family=Merriweather+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Kaushan+Script&family=Merriweather+Sans&display=swap");
 .navbar {
-    background-color: rgb(167, 166, 166);
-    font-family: 'Merriweather Sans';
-    display: flex;
-    justify-content: center;
+  background-color: rgb(167, 166, 166);
+  font-family: "Merriweather Sans";
+  display: flex;
+  justify-content: center;
 }
-
-
-
 
 figcaption {
-    display: flex;
-    justify-content: center;
-    font-family: 'Kaushan Script';
-    bottom: 2rem;
-    margin: 0 2rem;
-    color: rgb(45, 45, 45);
-    padding-bottom: 1.5vh;
-    font-size: 1.5em;
-    /* text-align: right; */
+  display: flex;
+  justify-content: center;
+  font-family: "Kaushan Script";
+  bottom: 2rem;
+  margin: 0 2rem;
+  color: rgb(45, 45, 45);
+  padding-bottom: 1.5vh;
+  font-size: 1.5em;
+  /* text-align: right; */
 }
 
-
-
 @media screen and (max-width: 768px) {
-    figcaption {
-        position: inherit;
-        bottom: inherit;
-        /* margin: 0.25rem 0px; */
-        /* color: rgb(45, 45, 45); */
-/* padding-top:0; */
-        font-size: inherit;
-
-    }
-
+  figcaption {
+    position: inherit;
+    bottom: inherit;
+    /* margin: 0.25rem 0px; */
+    /* color: rgb(45, 45, 45); */
+    /* padding-top:0; */
+    font-size: inherit;
+  }
 }
