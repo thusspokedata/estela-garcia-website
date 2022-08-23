@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Modal, Container, Row } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import Swal from "sweetalert2";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -19,10 +20,21 @@ function ContactPage() {
       subject: subject,
       message: message,
     };
-    console.log(message);
     axios
       .post("/api/email/send-email", requestBody)
       .then((response) => {
+        console.log(response);
+        if (response) {
+          Swal.fire({
+            title: "Custom animation with Animate.css",
+            showClass: {
+              popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutUp",
+            },
+          });
+        }
         navigate("/contact");
       })
       .catch((err) => {

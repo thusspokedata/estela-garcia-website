@@ -4,7 +4,6 @@ require("dotenv/config");
 
 router.post("/send-email", (req, res, next) => {
   let { email, subject, message } = req.body;
-  console.log(email);
   let transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
