@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Kaushan+Script&family=Merriweather+Sans&display=swap');
-.navbar {
+.navbar-landing {
     background-color: rgb(167, 166, 166);
     font-family: 'Merriweather Sans';
     display: flex;
-    justify-content: center;
+    justify-content:space-around;
 }
 
+@media screen and (max-width: 768px) {
+    .navbar-landing {
+        font-family: 'Merriweather Sans';
+        display:block;
+    }
 
+}
 
 
 figcaption {
@@ -25,6 +31,8 @@ figcaption {
 
 @media screen and (max-width: 768px) {
     figcaption {
+        /* display: flex; */
+        /* justify-content:space-around; */
         position: inherit;
         bottom: inherit;
         /* margin: 0.25rem 0px; */
