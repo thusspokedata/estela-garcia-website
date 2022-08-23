@@ -2,7 +2,7 @@ import { Nav, Navbar, Container } from "react-bootstrap";
 
 function NavBar() {
   return (
-    <div className="navbar">
+    <div className="navbar-landing">
       <Navbar
         variant="dark"
         sticky="top"
