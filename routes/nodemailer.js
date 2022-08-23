@@ -19,7 +19,7 @@ router.post("/send-email", (req, res, next) => {
       text: message,
       html: `<b>${message}</b>`,
     })
-    .then((info) => res.render("message", { email, subject, message, info }))
+    // .then((info) => res.render("message", { email, subject, message, info }))
     .catch((error) => console.log("Error Occurs!"));
 });
 
