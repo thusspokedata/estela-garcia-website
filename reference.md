@@ -3,7 +3,7 @@ npm install jsonwebtoken express-jwt
 npm install bcryptjs
 npm install nodemailer
 npm i axios
-npm i bootstrap-icons
+npm i react-helmet
 ```
 
 create middlewares --> jwt.js
