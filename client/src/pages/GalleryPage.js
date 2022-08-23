@@ -6,22 +6,14 @@ import axios from "axios";
 
 function GalleryPage() {
   const navigate = useNavigate();
-
   const [imageSelected, setImageSelected] = useState('')
-  // const [previewSource, setPreviewSource] = useState()
-
   const [title, setTitle] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
-
   const handleTitle = (e) => setTitle(e.target.value);
 
-
-
-  // const uploadImage = (e) => {
   const handleSignupSubmit = (e) => {
     e.preventDefault();
     const data = new FormData()
-    // previewFile(e.target.files[0])
     data.append("file", imageSelected)
     data.append("upload_preset", "estela-garcia-website")
     data.append("cloud_name", "dsy2gebem")
@@ -31,15 +23,10 @@ function GalleryPage() {
     })
       .then(response => response.json())
       .then(data => {
-
         const requestBody = { title, imageUrl: data.url };
         axios.post('/api/upload-photos', requestBody)
-          // axios.post('/api', requestBody)
-
           .then((response) => {
             navigate("/upload-photos");
-            // navigate("/gallery");
-
           })
           .catch((error) => {
             const errorDescription = error.response.data.message;
@@ -49,14 +36,7 @@ function GalleryPage() {
       .catch(err => console.log(err))
 
   }
-  //預覽圖片
-  // const previewFile = (file)=>{
-  //   const reader = new FileReader()
-  //   reader.readAsDataURL(file)
-  //   reader.onloadend = ()=>{
-  //     setPreviewSource(reader.result)
-  //   }
-  // }
+ 
 
   return (
     <div>
@@ -72,10 +52,6 @@ function GalleryPage() {
         {errorMessage && <p className="error-message">{errorMessage}</p>}
       </form>
 
-      {/* 預覽圖片 */}
-      {/* {previewSource && (
-        <img src={previewSource} alt='chosen' style={{height:'300px'}}/> 
-        )} */}
 
     </div>
 

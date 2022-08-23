@@ -19,7 +19,6 @@ router.post('/upload-photos', (req, res, next) => {
       const {  title,  imageUrl , _id } = createdPhoto;
       const gallery = { title,  imageUrl , _id };
       res.status(201).json({ gallery: gallery });
-       //console.log( createdPhoto )
     })
 
     
