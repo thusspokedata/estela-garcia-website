@@ -22,6 +22,9 @@ require("./config")(app);
 const nodemailer = require("./routes/nodemailer");
 app.use("/api/email", nodemailer);
 
+const newsletter = require("./routes/newsletter");
+app.use("/api/newsletter", newsletter);
+
 const allRoutes = require("./routes/index.routes");
 app.use("/api", allRoutes);
 
