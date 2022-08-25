@@ -5,6 +5,7 @@ import NavBar from "./components/Navbar";
 import ContactPage from "./components/ContactPage";
 import GalleryPage from "./pages/GalleryPage.js";
 import Footer from "./components/Footer";
+import Login from "./auth/Login";
 
 function App() {
   return (
@@ -13,8 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/upload-photos" element={<GalleryPage />} />
-
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </div>
