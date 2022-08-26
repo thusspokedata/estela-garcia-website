@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-function GalleryCard({ gallery }) {
+function PhotoCard({ gallery }) {
     const { title, imageUrl, _id } = gallery
 
 
     return (
         <>
-            <Link to={`/upload-photos/${_id}`}  >
+            <Link to={`/photos/${_id}`}  >
                     <img src={imageUrl} alt={imageUrl} height='200' width='290' style={{objectFit:'cover'}}/>
                     <p>{title}</p>
             </Link >
@@ -17,4 +17,4 @@ function GalleryCard({ gallery }) {
     );
 }
 
-export default GalleryCard;
+export default PhotoCard;
