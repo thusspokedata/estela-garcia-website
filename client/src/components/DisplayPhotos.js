@@ -2,10 +2,10 @@ import axios from "axios";
 import React, { useState, useEffect } from 'react'
 import { Container } from "react-bootstrap";
 import PhotoCard from "./PhotoCard"
+// import UploadPhotos from "./UploadPhotos"
 
 
-
-function DisplayPhotos() {
+function DisplayPhotos(props) {
     const [photos, setPhotos] = useState([]);
     const getAllPhotos = () => {
         axios
@@ -19,10 +19,16 @@ function DisplayPhotos() {
     }, []);
 
 
+
     return (
-        <Container className='row p-5 m-auto g-3 px-lg-5'>
-            {photos?.map((gallery) => <div className='col-lg-3 col-md-6 col-12'> <PhotoCard key={gallery._id} gallery={gallery} /></div>)}
-        </Container>
+        <>
+            {/* <UploadPhotos refreshPhotos={getAllPhotos} /> */}
+
+            <Container className='row p-5 m-auto g-3 px-lg-5'>
+                {photos?.map((gallery) => <div className='col-lg-3 col-md-6 col-12' key={gallery._id}>
+                    <PhotoCard key={gallery._id} gallery={gallery} /></div>)}
+            </Container>
+        </>
     )
 
 

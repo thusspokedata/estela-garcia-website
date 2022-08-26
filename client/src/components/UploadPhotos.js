@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 
 
 
-function UploadPhotos() {
+function UploadPhotos(props) {
     const navigate = useNavigate();
     const [imageSelected, setImageSelected] = useState('')
     const [title, setTitle] = useState("");
@@ -34,6 +34,10 @@ function UploadPhotos() {
                     })
             })
             .catch(err => console.log(err))
+            setImageSelected('')
+            setTitle('')
+            // props.refreshPhotos(); 
+
     }
 
     return (
