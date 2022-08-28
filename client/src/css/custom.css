@@ -1,51 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Kaushan+Script&family=Merriweather+Sans&display=swap');
+
 .navbar-landing {
     background-color: rgb(167, 166, 166);
     font-family: 'Merriweather Sans';
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
 }
 
 @media screen and (max-width: 768px) {
     .navbar-landing {
         font-family: 'Merriweather Sans';
-        display:block;
+        display: block;
     }
 
 }
 
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Kaushan+Script&family=Merriweather+Sans&display=swap");
+
 .navbar {
-  background-color: rgb(167, 166, 166);
-  font-family: "Merriweather Sans";
-  display: flex;
-  justify-content: center;
+    background-color: rgb(167, 166, 166);
+    font-family: "Merriweather Sans";
+    display: flex;
+    justify-content: center;
 }
 
 figcaption {
-  display: flex;
-  justify-content: center;
-  font-family: "Kaushan Script";
-  bottom: 2rem;
-  margin: 0 2rem;
-  color: rgb(45, 45, 45);
-  padding-bottom: 1.5vh;
-  font-size: 1.5em;
-  /* text-align: right; */
+    display: flex;
+    justify-content: center;
+    font-family: "Kaushan Script";
+    bottom: 2rem;
+    margin: 0 2rem;
+    color: rgb(45, 45, 45);
+    padding-bottom: 1.5vh;
+    font-size: 1.5em;
 }
 
 @media screen and (max-width: 768px) {
     figcaption {
-        /* display: flex; */
-        /* justify-content:space-around; */
         position: inherit;
         bottom: inherit;
-        /* margin: 0.25rem 0px; */
-        /* color: rgb(45, 45, 45); */
-/* padding-top:0; */
         font-size: inherit;
-
     }
 
 }
 
+
+.gallery-upload-function {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    gap: 1rem;
+}
+
+.gallery-upload-function>button {
+    background-color: rgba(0, 0, 0, 0.778);
+    border-radius: 99px;
+    border: none;
+    color: white;
+    padding: 0.3rem 0.3rem;
+}
+
+.gallery-upload-function>input {
+    background-color: rgba(82, 81, 81, 0.064);
+}
