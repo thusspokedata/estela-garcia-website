@@ -15,6 +15,7 @@ const { isAuthenticated } = require("./middlewares/jwt");
 const auth = require("./routes/auth");
 app.use("/api/auth", auth);
 
+
 const nodemailer = require("./routes/nodemailer");
 app.use("/api/email", nodemailer);
 
