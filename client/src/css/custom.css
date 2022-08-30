@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,500&family=Kaushan+Script&family=Merriweather+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=EB+Garamond:ital,wght@1,500&family=Kaushan+Script&family=Merriweather+Sans&family=Varela+Round&display=swap');
 
 .navbar-landing {
     background-color: rgb(167, 166, 166);
@@ -9,7 +9,6 @@
 
 @media screen and (max-width: 768px) {
     .navbar-landing {
-        font-family: 'Merriweather Sans';
         display: block;
     }
 }
@@ -64,10 +63,10 @@ figcaption {
 }
 
 
-.GalleryOnePhotoPage-landing > img{
-    width:80vw;
-    height:80vh;
-    object-fit:contain;
+.GalleryOnePhotoPage-landing>img {
+    width: 80vw;
+    height: 80vh;
+    object-fit: contain;
 }
 
 .wrapper {
@@ -77,75 +76,133 @@ figcaption {
     display: flex;
     flex-wrap: wrap;
     gap: 2em;
-  }
-  
-  .wrapper img {
+}
+
+.wrapper img {
     cursor: pointer;
-  }
-  
-  /* Modal lightBox */
-  .overlay {
+}
+
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
     height: 100%;
-    background: rgba(27, 27, 27, 0.541);
+    background: rgba(0, 0, 0, 0.79);
     display: flex;
     align-items: center;
-  }
-  .overlay img {
+}
+
+.overlay-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto
+}
+
+.overlay img {
     display: block;
-    max-width: 60%;
-    max-height: 80%;
-    margin: 60px auto;
-    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
-  }
-  .overlay > span {
+    width: 70vw;
+    height: 70vh;
+    margin: auto;
+    object-fit: contain;
+}
+
+.overlay>span {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10%;
+    right: 10%;
     font-size: 30px;
-    color: #ffffff;
+    font-family: 'Varela Round';
+    color: white;
     z-index: 999;
     cursor: pointer;
-  }
-  .overlay-arrows_left {
-    display: flex;
-    /* background-color: #6d6d6d; */
-    background-color: #e74f4f;
+}
 
+.img-title {
+    font-size: 2rem;
+    font-family: 'Caveat';
+    color: white;
+    background-color: #000000a4;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.overlay-arrows_left {
+    display: flex;
+    color: white;
     justify-content: space-between;
     position: absolute;
     top: 50%;
     width: 50px;
     height: 50px;
-    left: 0;
+    left: 4vw;
     z-index: 999;
-  }
-  
-  .overlay-arrows_left svg {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .overlay-arrows_right svg {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .overlay-arrows_right {
-    display: flex;
-    /* background-color: #6d6d6d; */
-    background-color: #e74f4f;
+    cursor: pointer;
+}
 
+.overlay-arrows_left svg {
+    width: 50px;
+    height: 50px;
+}
+
+.overlay-arrows_right {
+    display: flex;
+    color: white;
     justify-content: space-between;
     position: absolute;
-    right: 0;
+    right: 4vw;
     width: 50px;
     height: 50px;
     top: 50%;
     z-index: 999;
-  }
-  
+    cursor: pointer;
+
+}
+
+.overlay-arrows_right svg {
+    width: 50px;
+    height: 50px;
+}
+
+@media screen and (max-width: 576px) {
+    .overlay>span {
+        position: absolute;
+        top: 13%;
+        right: 11%;
+        font-size: 24px;
+        font-family: 'Varela Round';
+        color: white;
+        z-index: 999;
+        cursor: pointer;
+    }
+
+    .overlay img {
+        display: flex;
+        position: relative;
+        width: 70vw;
+        height: 45vh;
+        margin: auto;
+        object-fit: contain;
+    }
+
+    .img-title {
+        font-size: 1.4rem;
+        font-family: 'Caveat';
+        color: white;
+        background-color: #000000a4;
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+
+    .overlay-arrows_left svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .overlay-arrows_right svg {
+        width: 30px;
+        height: 30px;
+    }
+}
