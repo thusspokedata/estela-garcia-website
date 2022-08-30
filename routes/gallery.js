@@ -41,6 +41,17 @@ router.get('/photos/:photoId', (req, res, next) => {
     .catch((error) => res.json(error));
 });
 
+router.put('/photos/:photoId', (req, res, next) => {
+  const { photoId } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(photoId)) {
+    res.status(400).json({ message: "Specified id is not valid" });
+    return;
+  }
+  Gallery.findByIdAndUpdate(photoId, req.body, { new: true })
+    .then((updatedPhoto) => res.json(updatedPhoto))
+    .catch((error) => res.json(error));
+});
+
 router.delete('/photos/:photoId', (req, res, next) => {
   const { photoId } = req.params;
 

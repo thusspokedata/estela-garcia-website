@@ -6,6 +6,8 @@ import ContactPage from "./components/ContactPage";
 import GalleryPage from "./pages/GalleryPage.js";
 import Footer from "./components/Footer";
 import Login from "./auth/Login";
+import EditGalleryPhoto from "./components/EditGalleryPhoto"
+
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/photos" element={<GalleryPage />} />
-
+        <Route path="/photos/edit/:photoId" element={<EditGalleryPhoto />} />           
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<Login />} />
       </Routes>

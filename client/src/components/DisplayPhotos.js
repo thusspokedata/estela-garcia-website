@@ -4,7 +4,9 @@ import { Container } from "react-bootstrap";
 import PhotoLightBox from "./PhotoLightBox";
 
 
+
 function DisplayPhotos(props) {
+
     const [photos, setPhotos] = useState([]);
     const getAllPhotos = () => {
         axios
@@ -83,15 +85,13 @@ function DisplayPhotos(props) {
         <>
             {/* <UploadPhotos refreshPhotos={getAllPhotos} /> */}
 
-            <Container className='row p-5 m-auto g-3 px-lg-5'>
+            <Container className='row m-auto g-3 px-lg-5' style={{paddingTop:'10vh'}}>
                 {photos?.map((gallery, index) => <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={gallery._id}>
                     <img src={gallery.imageUrl} alt={gallery.imageUrl} height='200' width='290' style={{ objectFit: 'cover' }} onClick={() => handleClick(gallery, index)} />
                 </div>)}
             </Container>
 
-
             {clickedImg && <PhotoLightBox clickedImg={clickedImg} clickedImgTitle={clickedImgTitle} handelRotationRight={handelRotationRight} handelRotationLeft={handelRotationLeft} setClickedImg={setClickedImg} />}
-
         </>
     )
 
