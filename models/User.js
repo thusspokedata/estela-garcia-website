@@ -12,6 +12,10 @@ const userSchema = new Schema(
       type: String,
       unique: true,
     },
+    email: {
+      type: String,
+      unique: true,
+    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
