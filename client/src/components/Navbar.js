@@ -1,23 +1,22 @@
-import { Nav, Navbar, Container } from "react-bootstrap";
+import { Nav, Navbar, Container, Row, Col } from "react-bootstrap";
 
 function NavBar() {
   return (
-    <div className="navbar-landing">
-      <Navbar
-        variant="dark"
-        sticky="top"
-        expand="md"
-        collapseOnSelect
-        className="p-1"
-      >
-        <Container>
+    // <div className="navbar-landing">
+    <Navbar
+      variant="dark"
+      sticky="top"
+      expand="md"
+      collapseOnSelect
+      className="p-2 navbar-landing"
+    >
+      <Container>
           <Navbar.Brand
             href="/"
             style={{ fontFamily: "Kaushan Script", fontSize: "1.7rem" }}
           >
             Estela García
           </Navbar.Brand>
-
           <Navbar.Toggle />
           <Navbar.Collapse>
             <Nav>
@@ -29,9 +28,9 @@ function NavBar() {
               <Nav.Link href="/contact">Contact</Nav.Link>
             </Nav>
           </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
+      </Container>
+    </Navbar>
+    //  </div>
   );
 }
 

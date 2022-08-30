@@ -1,5 +1,5 @@
 function Footer() {
-  const [name1, name2] = [" Wen-hsuan Liao ", " ThusSpokeData "];
+  const [name1, name2] = [" Wen-Hsuan Liao ", " ThusSpokeData "];
 
   return (
     <div>
