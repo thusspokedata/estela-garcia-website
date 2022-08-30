@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+// import Carousel from 'react-bootstrap/Carousel';
+
 
 
 function GalleryOnePhotoPage(props) {
@@ -23,16 +25,26 @@ function GalleryOnePhotoPage(props) {
 
   return (
     <>
-    
-
       {photo && (
-        <>
+        <div className='GalleryOnePhotoPage-landing'> 
           <p>{photo.title}</p>
           <img src={photo.imageUrl} alt={photo.imageUrl} />
-        </>
+        </div>
       )}
-
     </>
+    // <>
+    //   {photo && (
+    //     <Carousel>
+    //       <Carousel.Item>
+    //         <img className="d-block w-100" src={photo.imageUrl} alt={photo.imageUrl} />
+
+    //         <Carousel.Caption>
+    //           <p>{photo.title}</p>
+    //         </Carousel.Caption>
+    //       </Carousel.Item>
+    //     </Carousel>
+    //   )}
+    // </>
   );
 }
 
