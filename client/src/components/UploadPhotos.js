@@ -1,11 +1,9 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import React, { useState } from 'react'
 
 
 
 function UploadPhotos(props) {
-    const navigate = useNavigate();
     const [imageSelected, setImageSelected] = useState('')
     const [title, setTitle] = useState("");
     const [errorMessage, setErrorMessage] = useState(undefined);
@@ -26,7 +24,10 @@ function UploadPhotos(props) {
                 const requestBody = { title, imageUrl: data.url };
                 axios.post('/api/photos', requestBody)
                     .then((response) => {
-                        navigate("/photos");
+                        alert('Your photo is successfully uploaded!')
+                        setImageSelected('')
+                        setTitle('')
+                        props.refreshPhotos();
                     })
                     .catch((error) => {
                         const errorDescription = error.response.data.message;
@@ -34,10 +35,6 @@ function UploadPhotos(props) {
                     })
             })
             .catch(err => console.log(err))
-            setImageSelected('')
-            setTitle('')
-            // props.refreshPhotos(); 
-
     }
 
     return (

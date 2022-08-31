@@ -2,10 +2,15 @@ import axios from "axios";
 import React, { useState, useEffect } from 'react'
 import { Container } from "react-bootstrap";
 import PhotoLightBox from "./PhotoLightBox";
+import UploadPhotos from "./UploadPhotos";
+import { useContext } from "react";
+import { AuthContext } from "./../context/auth";
+
 
 
 
 function DisplayPhotos(props) {
+    const { isLoggedIn } = useContext(AuthContext);
 
     const [photos, setPhotos] = useState([]);
     const getAllPhotos = () => {
@@ -83,7 +88,7 @@ function DisplayPhotos(props) {
 
     return (
         <>
-            {/* <UploadPhotos refreshPhotos={getAllPhotos} /> */}
+           {!isLoggedIn && ( <UploadPhotos refreshPhotos={getAllPhotos} />)}
 
             <Container className='row m-auto g-3 px-lg-5' style={{paddingTop:'10vh'}}>
                 {photos?.map((gallery, index) => <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={gallery._id}>
