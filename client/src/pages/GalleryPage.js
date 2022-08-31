@@ -1,4 +1,4 @@
-import UploadPhotos from "./../components/UploadPhotos";
+// import UploadPhotos from "./../components/UploadPhotos";
 import DisplayPhotos from "./../components/DisplayPhotos";
 import { useContext } from "react";
 import { AuthContext } from "./../context/auth";
@@ -9,7 +9,9 @@ function GalleryPage() {
   return (
     <div>
 
-      {isLoggedIn && (<UploadPhotos />)}
+      {/* {isLoggedIn && (<UploadPhotos />)} */}
+      {/* {!isLoggedIn && (<UploadPhotos />)} */}
+
 
       {!isLoggedIn && (<DisplayPhotos />)}
 
