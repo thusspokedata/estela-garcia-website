@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from 'react'
-
-
+import { Form, Button, Modal, Container, Row } from "react-bootstrap";
+import { TbUpload } from "react-icons/tb"
 
 function UploadPhotos(props) {
     const [imageSelected, setImageSelected] = useState('')
@@ -38,19 +38,33 @@ function UploadPhotos(props) {
     }
 
     return (
-        <form className='p-3' onSubmit={handleSignupSubmit}>
 
-            <div className='p-2'>
-                <label className='col-lg-2 col-md-3 col-12'>Photo title (optional):</label>
-                <input className='col-lg-5 col-md-5 col-12' type="text" name="title" value={title} onChange={handleTitle} />
-            </div>
-            <div className='p-2 gallery-upload-function'>
-                <input type="file" onChange={(e) => setImageSelected(e.target.files[0])} />
-                <button className='col-lg-1 col-md-2 col-3' type='submit'>UPLOAD</button>
-            </div>
+        <Container className="d-flex justify-content-center mt-3">
+            <Row className="col-12 col-sm-12 col-lg-6">
+                <Form onSubmit={handleSignupSubmit}>
+                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Label>Photo Title (optional):</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Discribe the photo..."
+                            name="title"
+                            value={title}
+                            onChange={handleTitle}
+                        />
+                    </Form.Group>
 
-            {errorMessage && <p className="error-message">{errorMessage}</p>}
-        </form>
+                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Control type="file" placeholder="Choose your file..." onChange={(e) => setImageSelected(e.target.files[0])}/>
+                    </Form.Group>
+                
+                    <Modal.Footer>
+                        <Button variant="dark text-white col-12 mx-auto" type="submit">
+                           <TbUpload/>&nbsp;&nbsp;&nbsp;Upload
+                        </Button>
+                    </Modal.Footer>
+                </Form>
+            </Row>
+        </Container>
 
     );
 }
