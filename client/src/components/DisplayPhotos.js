@@ -6,6 +6,8 @@ import UploadPhotos from "./UploadPhotos";
 import { useContext } from "react";
 import { AuthContext } from "./../context/auth";
 import OnePhotoCard from "./OnePhotoCard";
+import { Helmet } from "react-helmet";
+
 
 function DisplayPhotos(props) {
     const { isLoggedIn } = useContext(AuthContext);
@@ -80,6 +82,9 @@ function DisplayPhotos(props) {
 
     return (
         <>
+            <Helmet>
+                <title>Estela García | Gallery</title>
+            </Helmet>
 
             {/* 管理者 admin */}
             {!isLoggedIn && (<UploadPhotos refreshPhotos={getAllPhotos} />)}

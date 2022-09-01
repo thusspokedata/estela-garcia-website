@@ -206,3 +206,25 @@ figcaption {
         height: 30px;
     }
 }
+
+
+.EditGalleryPhotoPage-img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .EditGalleryPhotoPage-md {
+        /* position: absolute;
+        top: 13%;
+        right: 11%;
+        font-size: 24px;
+        font-family: 'Varela Round';
+        color: white;
+        z-index: 999;
+        cursor: pointer; */
+    }
+}

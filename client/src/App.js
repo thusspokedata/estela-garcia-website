@@ -6,7 +6,7 @@ import ContactPage from "./components/ContactPage";
 import GalleryPage from "./pages/GalleryPage.js";
 import Footer from "./components/Footer";
 import Login from "./auth/Login";
-import EditGalleryPhoto from "./components/EditGalleryPhoto"
+import EditGalleryPhotoPage from "./pages/EditGalleryPhotoPage"
 
 
 function App() {
@@ -14,9 +14,9 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/photos" element={<GalleryPage />} />
-        <Route path="/photos/:photoId" element={<EditGalleryPhoto />} />           
+        <Route path="/photos/:photoId" element={<EditGalleryPhotoPage />} />           
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<Login />} />
       </Routes>
