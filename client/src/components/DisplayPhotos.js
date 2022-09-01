@@ -5,9 +5,7 @@ import PhotoLightBox from "./PhotoLightBox";
 import UploadPhotos from "./UploadPhotos";
 import { useContext } from "react";
 import { AuthContext } from "./../context/auth";
-
-
-
+import OnePhotoCard from "./OnePhotoCard";
 
 function DisplayPhotos(props) {
     const { isLoggedIn } = useContext(AuthContext);
@@ -26,7 +24,6 @@ function DisplayPhotos(props) {
 
     const [clickedImg, setClickedImg] = useState(null);
     const [clickedImgTitle, setClickedImgTitle] = useState(null);
-
     const [currentIndex, setCurrentIndex] = useState(null);
 
     const handleClick = (gallery, index) => {
@@ -53,7 +50,6 @@ function DisplayPhotos(props) {
 
         setClickedImg(newItem);
         setClickedImgTitle(newItemTitle);
-
         setCurrentIndex(newIndex);
     };
 
@@ -82,25 +78,29 @@ function DisplayPhotos(props) {
         setCurrentIndex(newIndex);
     };
 
-
-
-
-
     return (
         <>
-           {!isLoggedIn && ( <UploadPhotos refreshPhotos={getAllPhotos} />)}
 
-            <Container className='row m-auto g-3 px-lg-5' style={{paddingTop:'10vh'}}>
-                {photos?.map((gallery, index) => <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={gallery._id}>
+            {/* 管理者 admin */}
+            {!isLoggedIn && (<UploadPhotos refreshPhotos={getAllPhotos} />)}
+
+            <Container className='row m-auto g-3 px-lg-5' style={{ paddingTop: '10vh' }}>
+                {!isLoggedIn && photos?.map((gallery, index) => <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={gallery._id}>
+                    <OnePhotoCard key={gallery._id} gallery={gallery} />
+                </div>)}
+            </Container>
+
+
+            {/* 訪客 guest */}
+            <Container className='row m-auto g-3 px-lg-5' style={{ paddingTop: '10vh' }}>
+                {isLoggedIn && photos?.map((gallery, index) => <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={gallery._id}>
                     <img src={gallery.imageUrl} alt={gallery.imageUrl} height='200' width='290' style={{ objectFit: 'cover' }} onClick={() => handleClick(gallery, index)} />
                 </div>)}
             </Container>
 
-            {clickedImg && <PhotoLightBox clickedImg={clickedImg} clickedImgTitle={clickedImgTitle} handelRotationRight={handelRotationRight} handelRotationLeft={handelRotationLeft} setClickedImg={setClickedImg} />}
+            {isLoggedIn && clickedImg && <PhotoLightBox clickedImg={clickedImg} clickedImgTitle={clickedImgTitle} handelRotationRight={handelRotationRight} handelRotationLeft={handelRotationLeft} setClickedImg={setClickedImg} />}
         </>
     )
-
-
 }
 
 export default DisplayPhotos;
