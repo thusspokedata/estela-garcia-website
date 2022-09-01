@@ -20,7 +20,7 @@ function NavBar() {
           <Navbar.Toggle />
           <Navbar.Collapse>
             <Nav>
-              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/home">Home</Nav.Link>
               <Nav.Link href="#aboutMe">About Me</Nav.Link>
               <Nav.Link href="/photos">Gallery</Nav.Link>
               <Nav.Link href="#multiMedia">Multi-Media</Nav.Link>
