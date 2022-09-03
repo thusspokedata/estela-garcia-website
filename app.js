@@ -15,12 +15,14 @@ const { isAuthenticated } = require("./middlewares/jwt");
 const auth = require("./routes/auth");
 app.use("/api/auth", auth);
 
-
 const nodemailer = require("./routes/nodemailer");
 app.use("/api/email", nodemailer);
 
 // const newsletter = require("./routes/newsletter");
 // app.use("/api/newsletter", newsletter);
+
+const concert = require("./routes/concerts");
+app.use("/api", concert);
 
 const allRoutes = require("./routes/index.routes");
 app.use("/api", allRoutes);
