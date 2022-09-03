@@ -21,7 +21,7 @@
     justify-content: center;
 }
 
-figcaption {
+.HomePage-title {
     display: flex;
     justify-content: center;
     font-family: "Kaushan Script";
@@ -29,7 +29,7 @@ figcaption {
     margin: 0 2rem;
     color: rgb(45, 45, 45);
     padding-bottom: 1.5vh;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 @media screen and (max-width: 768px) {
