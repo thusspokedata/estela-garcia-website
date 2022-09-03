@@ -1,4 +1,5 @@
-import DisplayPhotos from "./../components/DisplayPhotos";
+import { DisplayPhotos } from "./../components/index"
+
 
 function GalleryPage() {
 

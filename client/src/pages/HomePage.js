@@ -10,7 +10,7 @@ function HomePage() {
       </Helmet>
       <Container className="p-md-5 p-3" fluid="md">
         <figure className="position-relative">
-          <figcaption>Professional Tango Singer</figcaption>
+          <h1>Professional Tango Singer</h1> 
           <img
             src={homeEstelaPhoto}
             alt="homeEstelaPhoto"

@@ -1,12 +1,11 @@
 import axios from "axios";
 import React, { useState, useEffect } from 'react'
 import { Container } from "react-bootstrap";
-import PhotoLightBox from "./PhotoLightBox";
-import UploadPhotos from "./UploadPhotos";
 import { useContext } from "react";
-import { AuthContext } from "./../context/auth";
-import OnePhotoCard from "./OnePhotoCard";
+import { AuthContext } from "../../context/auth";
 import { Helmet } from "react-helmet";
+import { OnePhotoCard,UploadPhotos,PhotoLightBox } from "../index"
+
 
 
 function DisplayPhotos(props) {
