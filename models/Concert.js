@@ -6,7 +6,23 @@ const concertSchema = new Schema(
       type: String,
       require: true,
     },
-
+    address: {
+      type: String,
+      lowercase: true,
+      trim: true,
+    },
+    addressNumber: {
+      type: String,
+      trim: true,
+    },
+    city: {
+      type: String,
+      trim: true,
+    },
+    zipCode: {
+      type: String,
+      trim: true,
+    },
     imageUrl: String,
     aboutEvent: {
       type: String,

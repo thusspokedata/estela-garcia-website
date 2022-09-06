@@ -8,6 +8,10 @@ function AddConcert() {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [aboutEvent, setAboutEvent] = useState("");
+  const [address, setAddress] = useState("");
+  const [addressNumber, setAddressNumber] = useState("");
+  const [city, setCity] = useState("");
+  const [zipCode, setZipCode] = useState("");
   //   const [date, setDate] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -25,6 +29,10 @@ function AddConcert() {
       .then((data) => {
         const requestBody = {
           title,
+          address,
+          addressNumber,
+          zipCode,
+          city,
           imageUrl: data.url,
           aboutEvent,
           //   date,
@@ -33,13 +41,10 @@ function AddConcert() {
           console.log(response);
           if (response) {
             Swal.fire({
-              title: "The event was saved",
-              showClass: {
-                popup: "animate__animated animate__fadeInDown",
-              },
-              hideClass: {
-                popup: "animate__animated animate__fadeOutUp",
-              },
+              icon: "success",
+              title: "Your work has been saved",
+              showConfirmButton: false,
+              timer: 1500,
             });
           }
         });
@@ -52,7 +57,10 @@ function AddConcert() {
     setTitle("");
     setImage("");
     setAboutEvent("");
-    // setDate("");
+    setAddress("");
+    setAddressNumber("");
+    setCity("");
+    setZipCode("");
   };
   return (
     <>
@@ -91,14 +99,61 @@ function AddConcert() {
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
             >
-              {/* <Form.Label>Subject</Form.Label>
+              <Form.Label>Concert Day</Form.Label>
               <Form.Control
-                as="textarea"
+                type="date"
+                name="date_of_birth"
+                // error={errors.date_of_birth}
+                // ref={register}
+              />
+              <label htmlFor="recipient-name" className="col-form-label mt-2">
+                Address:
+              </label>
+              <Form.Control
                 type="text"
-                rows={4}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-              /> */}
+                placeholder="address"
+                value={address}
+                className="mt-1 col-6"
+                name="address"
+                onChange={(e) => setAddress(e.target.value)}
+                autoFocus
+              />
+              <label htmlFor="recipient-name" className="col-form-label mt-2">
+                Number:
+              </label>
+              <Form.Control
+                type="text"
+                placeholder="addressNumber"
+                value={addressNumber}
+                name="addressNumber"
+                className="mt-1"
+                onChange={(e) => setAddressNumber(e.target.value)}
+                autoFocus
+              />
+              <label htmlFor="recipient-name" className="col-form-label mt-2">
+                Zip Code:
+              </label>
+              <Form.Control
+                type="text"
+                placeholder="Zip code"
+                value={zipCode}
+                name="zipCode"
+                className="mt-1"
+                onChange={(e) => setZipCode(e.target.value)}
+                autoFocus
+              />
+              <label htmlFor="recipient-name" className="col-form-label mt-2">
+                City:
+              </label>
+              <Form.Control
+                type="text"
+                placeholder="City"
+                value={city}
+                className=""
+                name="city"
+                onChange={(e) => setCity(e.target.value)}
+                autoFocus
+              />
               <label className="mt-3" htmlFor="pet-select">
                 Image:
               </label>

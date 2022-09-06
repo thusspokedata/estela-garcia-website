@@ -60,8 +60,8 @@ router.post("/login", (req, res, next) => {
       }
       const passwordCorrect = bcrypt.compareSync(password, foundUser.password);
       if (passwordCorrect) {
-        const { _id, email, username, role } = foundUser;
-        const payload = { _id, email, username, role };
+        const { _id, username } = foundUser;
+        const payload = { _id, username };
         // create the json web token
         const authToken = jwt.sign(payload, process.env.JWT_SECRET, {
           algorithm: "HS256",
@@ -76,6 +76,12 @@ router.post("/login", (req, res, next) => {
       console.log(err);
       res.status(500).json({ message: "Internal Server Error" });
     });
+});
+
+router.get("/verify", isAuthenticated, (req, res, next) => {
+  // if the token is valid we can access it on : req.payload
+  console.log("request payload is: ", req.payload);
+  res.status(200).json(req.payload);
 });
 
 module.exports = router;

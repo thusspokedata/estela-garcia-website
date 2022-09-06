@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
 
+import { ShowConcerts } from "../components";
+
 function Concerts() {
   const [concerts, setConcerts] = useState([]);
 
@@ -18,11 +20,13 @@ function Concerts() {
   return (
     <>
       <main>
-        <Container>
+        {/* <Container>
           <Row>
-            <Col sm={4}>{/* <ShowConcerts concerts={concerts} /> */}</Col>
+            <Col sm={12}> */}
+        <ShowConcerts concerts={concerts} />
+        {/* </Col>
           </Row>
-        </Container>
+        </Container> */}
       </main>
     </>
   );
