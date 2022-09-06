@@ -6,3 +6,5 @@ export { default as OnePhotoCard } from "./OnePhotoCard.js";
 export { default as PhotoLightBox } from "./PhotoLightBox.js";
 export { default as UploadPhotos } from "./UploadPhotos.js";
 export { default as AddConcert } from "./concert/AddConcerts.js";
+export { default as ShowConcerts } from "./concert/ShowConcerts.js";
+export { default as ProtectedRoute } from "./ProtectedRoutes.js";

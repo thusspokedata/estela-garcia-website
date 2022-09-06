@@ -1,8 +1,14 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Login from "./auth/Login";
-import { HomePage, GalleryPage, EditGalleryPhotoPage } from "./pages";
-import { NavBar, ContactPage, AddConcert, Footer } from "./components";
+import { HomePage, GalleryPage, EditGalleryPhotoPage, Concerts } from "./pages";
+import {
+  NavBar,
+  ContactPage,
+  AddConcert,
+  Footer,
+  ProtectedRoute,
+} from "./components";
 
 function App() {
   return (
@@ -14,7 +20,15 @@ function App() {
         <Route path="/photos/:photoId" element={<EditGalleryPhotoPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/concerts/add-new" element={<AddConcert />} />
+        <Route path="/concerts" element={<Concerts />} />
+        <Route
+          path="/concerts/add-new"
+          element={
+            <ProtectedRoute redirectTo="/">
+              <AddConcert />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
       <Footer />
     </div>
