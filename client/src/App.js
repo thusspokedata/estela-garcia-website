@@ -1,7 +1,15 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Login from "./auth/Login";
-import { HomePage, GalleryPage, AddGalleryPage, EditGalleryPhotoPage, MultiMediaPage, AddMultiMediaPage, Concerts } from "./pages";
+import {
+  HomePage,
+  GalleryPage,
+  AddGalleryPage,
+  EditGalleryPhotoPage,
+  MultiMediaPage,
+  AddMultiMediaPage,
+  Concerts,
+} from "./pages";
 import {
   NavBar,
   ContactPage,
@@ -15,43 +23,18 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute redirectTo="/">
-              <HomePage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/photos"
-          element={
-            <ProtectedRoute redirectTo="/">
-              <GalleryPage />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/photos" element={<GalleryPage />} />
+        <Route path="/photos/:photoId" element={<EditGalleryPhotoPage />} />
+        <Route path="/medias" element={<MultiMediaPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/concerts" element={<Concerts />} />
         <Route
           path="/admin/photos"
           element={
             <ProtectedRoute redirectTo="/">
               <AddGalleryPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/photos/:photoId"
-          element={
-            <ProtectedRoute redirectTo="/">
-              <EditGalleryPhotoPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/medias"
-          element={
-            <ProtectedRoute redirectTo="/">
-              <MultiMediaPage />
             </ProtectedRoute>
           }
         />
@@ -63,9 +46,6 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/concerts" element={<Concerts />} />
         <Route
           path="/concerts/add-new"
           element={
