@@ -15,9 +15,30 @@ function App() {
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/photos" element={<GalleryPage />} />
-        <Route path="/photos/:photoId" element={<EditGalleryPhotoPage />} />
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute redirectTo="/">
+              <HomePage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/photos"
+          element={
+            <ProtectedRoute redirectTo="/">
+              <GalleryPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/photos/:photoId"
+          element={
+            <ProtectedRoute redirectTo="/">
+              <EditGalleryPhotoPage />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/concerts" element={<Concerts />} />
