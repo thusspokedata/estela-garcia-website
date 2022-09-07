@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Login from "./auth/Login";
-import { HomePage, GalleryPage, EditGalleryPhotoPage, Concerts } from "./pages";
+import { HomePage, GalleryPage, AddGalleryPage, EditGalleryPhotoPage, Concerts } from "./pages";
 import {
   NavBar,
   ContactPage,
@@ -16,7 +16,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route
-          path="/home"
+          path="/"
           element={
             <ProtectedRoute redirectTo="/">
               <HomePage />
@@ -28,6 +28,14 @@ function App() {
           element={
             <ProtectedRoute redirectTo="/">
               <GalleryPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/add-photos"
+          element={
+            <ProtectedRoute redirectTo="/">
+              <AddGalleryPage />
             </ProtectedRoute>
           }
         />

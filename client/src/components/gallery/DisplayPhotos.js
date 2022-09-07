@@ -1,15 +1,12 @@
 import axios from "axios";
 import React, { useState, useEffect } from 'react'
 import { Container } from "react-bootstrap";
-import { useContext } from "react";
-import { AuthContext } from "../../context/auth";
 import { Helmet } from "react-helmet";
-import { OnePhotoCard,UploadPhotos,PhotoLightBox } from "../index"
+import { PhotoLightBox } from "../index"
 
 
 
 function DisplayPhotos(props) {
-    const { isLoggedIn } = useContext(AuthContext);
 
     const [photos, setPhotos] = useState([]);
     const getAllPhotos = () => {
@@ -85,20 +82,12 @@ function DisplayPhotos(props) {
                 <title>Estela García | Gallery</title>
             </Helmet>
 
-            {isLoggedIn && (<UploadPhotos refreshPhotos={getAllPhotos} />)}
-            <Container className='row m-auto g-3 px-lg-5' style={{ paddingTop: '6vh' }}>
-                {isLoggedIn && photos?.map((gallery, index) => <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={gallery._id}>
-                    <OnePhotoCard key={gallery._id} gallery={gallery} />
-                </div>)}
-            </Container>
-
-
             <Container className='row m-auto g-3 px-lg-5' style={{ paddingTop: '1vh' }}>
-                {!isLoggedIn && photos?.map((gallery, index) => <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={gallery._id}>
+                {photos?.map((gallery, index) => <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={gallery._id}>
                     <img src={gallery.imageUrl} alt={gallery.imageUrl} height='200' width='290' style={{ objectFit: 'cover' }} onClick={() => handleClick(gallery, index)} />
                 </div>)}
             </Container>
-            {!isLoggedIn && clickedImg && <PhotoLightBox clickedImg={clickedImg} clickedImgTitle={clickedImgTitle} handelRotationRight={handelRotationRight} handelRotationLeft={handelRotationLeft} setClickedImg={setClickedImg} />}
+            {clickedImg && <PhotoLightBox clickedImg={clickedImg} clickedImgTitle={clickedImgTitle} handelRotationRight={handelRotationRight} handelRotationLeft={handelRotationLeft} setClickedImg={setClickedImg} />}
         </>
     )
 }
