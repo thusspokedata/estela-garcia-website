@@ -6,7 +6,7 @@ import { AuthContext } from "../../context/auth";
 import { Helmet } from "react-helmet";
 import { OnePhotoCard, UploadPhotos } from "../index"
 
-function DisplayPhotos(props) {
+function DisplayPhotosAdmin(props) {
     const { isLoggedIn } = useContext(AuthContext);
     const [photos, setPhotos] = useState([]);
     const getAllPhotos = () => {
@@ -23,7 +23,7 @@ function DisplayPhotos(props) {
     return (
         <>
             <Helmet>
-                <title>Estela García | Edit My Gallery</title>
+                <title>Edit My Gallery</title>
             </Helmet>
 
             <UploadPhotos refreshPhotos={getAllPhotos} />
@@ -36,4 +36,4 @@ function DisplayPhotos(props) {
     )
 }
 
-export default DisplayPhotos;
+export default DisplayPhotosAdmin;

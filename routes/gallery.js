@@ -19,7 +19,6 @@ router.post('/photos', (req, res, next) => {
 });
 
 router.get('/photos', (req, res, next) => {
-  console.log('get photos')
   Gallery.find()
     .then((allPhotos) => {
       res.json(allPhotos)
