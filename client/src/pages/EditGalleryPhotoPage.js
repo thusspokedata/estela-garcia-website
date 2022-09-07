@@ -7,6 +7,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Helmet } from "react-helmet";
+import Swal from "sweetalert2";
 
 
 
@@ -34,8 +35,15 @@ function EditGalleryPhotoPage(props) {
     axios
       .put(`/api/photos/${photoId}`, requestBody)
       .then((response) => {
-        navigate("/photos");
-
+        if (response) {
+          Swal.fire({
+            icon: "success",
+            title: "Your title is changed!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+        navigate("/add-photos");
       });
   };
 
@@ -43,8 +51,16 @@ function EditGalleryPhotoPage(props) {
 
     axios
       .delete(`/api/photos/${photoId}`)
-      .then(() => {
-        navigate("/photos");
+      .then((response) => {
+        if (response) {
+          Swal.fire({
+            icon: "success",
+            title: "Your photo is deleted!",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+        navigate("/add-photos");
       })
       .catch((err) => console.log(err));
   };

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from 'react'
 import { Form, Button, Modal, Container, Row } from "react-bootstrap";
 import { TbUpload } from "react-icons/tb"
+import Swal from "sweetalert2";
 
 function UploadPhotos(props) {
     const [imageSelected, setImageSelected] = useState('')
@@ -24,7 +25,14 @@ function UploadPhotos(props) {
                 const requestBody = { title, imageUrl: data.url };
                 axios.post('/api/photos', requestBody)
                     .then((response) => {
-                        alert('Your photo is successfully uploaded!')
+                        if (response) {
+                            Swal.fire({
+                              icon: "success",
+                              title: "Your photo is successfully uploaded!",
+                              showConfirmButton: false,
+                              timer: 1500,
+                            });
+                          }
                         setImageSelected('')
                         setTitle('')
                         props.refreshPhotos();
