@@ -85,24 +85,20 @@ function DisplayPhotos(props) {
                 <title>Estela García | Gallery</title>
             </Helmet>
 
-            {/* 管理者 admin */}
-            {!isLoggedIn && (<UploadPhotos refreshPhotos={getAllPhotos} />)}
-
-            <Container className='row m-auto g-3 px-lg-5' style={{ paddingTop: '10vh' }}>
-                {!isLoggedIn && photos?.map((gallery, index) => <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={gallery._id}>
+            {isLoggedIn && (<UploadPhotos refreshPhotos={getAllPhotos} />)}
+            <Container className='row m-auto g-3 px-lg-5' style={{ paddingTop: '6vh' }}>
+                {isLoggedIn && photos?.map((gallery, index) => <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={gallery._id}>
                     <OnePhotoCard key={gallery._id} gallery={gallery} />
                 </div>)}
             </Container>
 
 
-            {/* 訪客 guest */}
-            <Container className='row m-auto g-3 px-lg-5' style={{ paddingTop: '10vh' }}>
-                {isLoggedIn && photos?.map((gallery, index) => <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={gallery._id}>
+            <Container className='row m-auto g-3 px-lg-5' style={{ paddingTop: '1vh' }}>
+                {!isLoggedIn && photos?.map((gallery, index) => <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={gallery._id}>
                     <img src={gallery.imageUrl} alt={gallery.imageUrl} height='200' width='290' style={{ objectFit: 'cover' }} onClick={() => handleClick(gallery, index)} />
                 </div>)}
             </Container>
-
-            {isLoggedIn && clickedImg && <PhotoLightBox clickedImg={clickedImg} clickedImgTitle={clickedImgTitle} handelRotationRight={handelRotationRight} handelRotationLeft={handelRotationLeft} setClickedImg={setClickedImg} />}
+            {!isLoggedIn && clickedImg && <PhotoLightBox clickedImg={clickedImg} clickedImgTitle={clickedImgTitle} handelRotationRight={handelRotationRight} handelRotationLeft={handelRotationLeft} setClickedImg={setClickedImg} />}
         </>
     )
 }
