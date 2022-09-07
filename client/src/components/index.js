@@ -11,6 +11,7 @@ export { default as PhotoLightBox } from "../components/gallery/PhotoLightBox.js
 export { default as UploadPhotos } from "../components/gallery/UploadPhotos.js";
 export { default as AddMedia } from "../components/MultiMedia/AddMedia.js";
 export { default as DisplayMediaAdmin } from "../components/MultiMedia/DisplayMediaAdmin.js";
+export { default as DisplayMedia } from "../components/MultiMedia/DisplayMedia.js";
 export { default as OneMediaCard } from "../components/MultiMedia/OneMediaCard.js";
 
 
