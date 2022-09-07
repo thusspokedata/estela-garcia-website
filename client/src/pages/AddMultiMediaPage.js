@@ -1,7 +1,7 @@
 import { DisplayMediaAdmin } from "./../components/index"
 
 
-function MultiMediaPage() {
+function AddMultiMediaPage() {
 
   return (
     <>
@@ -10,4 +10,4 @@ function MultiMediaPage() {
 
   )
 }
-export default MultiMediaPage;
+export default AddMultiMediaPage;

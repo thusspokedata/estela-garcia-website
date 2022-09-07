@@ -20,8 +20,8 @@ function OneMediaCard({ media }) {
                     <iframe
                         src={url}
                         title="YouTube video player"
-                        frameborder="0"
-                        allowfullscreen>
+                        frameBorder="0"
+                        allowFullScreen>
                     </iframe>
                 </div>
             </Link >

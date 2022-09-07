@@ -43,7 +43,7 @@ function EditGalleryPhotoPage(props) {
             timer: 1500,
           });
         }
-        navigate("/add-photos");
+        navigate("/admin/photos");
       });
   };
 
@@ -60,7 +60,7 @@ function EditGalleryPhotoPage(props) {
             timer: 1500,
           });
         }
-        navigate("/add-photos");
+        navigate("/admin/photos");
       })
       .catch((err) => console.log(err));
   };
