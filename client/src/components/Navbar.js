@@ -15,7 +15,7 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand
-          href="/home"
+          href="/"
           style={{ fontFamily: "Kaushan Script", fontSize: "1.7rem" }}
         >
           Estela García
@@ -25,9 +25,10 @@ function NavBar() {
           {isLoggedIn ? (
             <>
               <Nav>
-                <Nav.Link href="/home">Home</Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="#aboutMe">About Me</Nav.Link>
                 <Nav.Link href="/photos">Gallery</Nav.Link>
+                <Nav.Link href="/add-photos/">Add Gallery</Nav.Link>
                 <Nav.Link href="#multiMedia">Multi-Media</Nav.Link>
                 <Nav.Link href="/concerts">Concerts</Nav.Link>
                 <Nav.Link href="/concerts/add-new">Add a Concert</Nav.Link>
@@ -37,7 +38,7 @@ function NavBar() {
           ) : (
             <>
               <Nav>
-                <Nav.Link href="/home">Home</Nav.Link>
+                <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="#aboutMe">About Me</Nav.Link>
                 <Nav.Link href="/photos">Gallery</Nav.Link>
                 <Nav.Link href="#multiMedia">Multi-Media</Nav.Link>

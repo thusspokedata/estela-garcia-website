@@ -32,7 +32,7 @@ function Login() {
         storeToken(token);
         // console.log(token)
         verifyStoredToken().then(() => {
-          navigate("/home");
+          navigate("/");
         });
       })
       .catch((err) => {
