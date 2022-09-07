@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Login from "./auth/Login";
-import { HomePage, GalleryPage, AddGalleryPage, EditGalleryPhotoPage, Concerts } from "./pages";
+import { HomePage, GalleryPage, AddGalleryPage, EditGalleryPhotoPage, AddMultiMediaPage, Concerts } from "./pages";
 import {
   NavBar,
   ContactPage,
@@ -44,6 +44,14 @@ function App() {
           element={
             <ProtectedRoute redirectTo="/">
               <EditGalleryPhotoPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/medias"
+          element={
+            <ProtectedRoute redirectTo="/">
+              <AddMultiMediaPage />
             </ProtectedRoute>
           }
         />

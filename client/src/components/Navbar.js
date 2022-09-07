@@ -28,10 +28,10 @@ function NavBar() {
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="#aboutMe">About Me</Nav.Link>
                 <Nav.Link href="/photos">Gallery</Nav.Link>
-                <Nav.Link href="/add-photos/">Add Gallery</Nav.Link>
-                <Nav.Link href="#multiMedia">Multi-Media</Nav.Link>
+                <Nav.Link href="/add-photos/" style={{color:'gray',fontSize:'0.8rem'}}>Add Gallery</Nav.Link>
+                <Nav.Link href="/medias">Multi-Media</Nav.Link>
                 <Nav.Link href="/concerts">Concerts</Nav.Link>
-                <Nav.Link href="/concerts/add-new">Add a Concert</Nav.Link>
+                <Nav.Link href="/concerts/add-new" style={{color:'gray',fontSize:'0.8rem'}}>Add a Concert</Nav.Link>
                 <Nav.Link href="/contact">Contact</Nav.Link>
               </Nav>
             </>
@@ -41,7 +41,7 @@ function NavBar() {
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="#aboutMe">About Me</Nav.Link>
                 <Nav.Link href="/photos">Gallery</Nav.Link>
-                <Nav.Link href="#multiMedia">Multi-Media</Nav.Link>
+                <Nav.Link href="/medias">Multi-Media</Nav.Link>
                 <Nav.Link href="/concerts">Concerts</Nav.Link>
                 <Nav.Link href="/contact">Contact</Nav.Link>
               </Nav>
