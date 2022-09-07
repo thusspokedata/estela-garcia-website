@@ -5,37 +5,28 @@ import axios from "axios";
 import { Form, Button, Modal, Container, Row } from "react-bootstrap";
 import Swal from "sweetalert2";
 
-
-function AddMedia() {
+function AddMedia(props) {
     const [title, setTitle] = useState("");
     const [youTubeSrc, setYouTubeSrc] = useState("");
-    // const [errorMessage, setErrorMessage] = useState("");
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const requestBody = { title, youTubeSrc }
 
-        axios.post("/api/medias", requestBody).then((response) => {
-
-            // const targetStr = response.data.multiMedia.youTubeSrc
-            // const regEx = /watch\?v\=/
-            // youTubeSrc.replace(regEx, 'embed/')
-            // 'embed/' = 'watch?v='
-            // console.log(response.data.multiMedia.youTubeSrc);
-
-            if (response) {
-                Swal.fire({
-                    icon: "success",
-                    title: "Your media has been saved!",
-                    showConfirmButton: false,
-                    timer: 1500,
-                });
-            }
-        })
-        setTitle("");
-        setYouTubeSrc("");
+        axios.post("/api/medias", requestBody)
+            .then((response) => {
+                if (response) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Your media has been saved!",
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                }
+                setTitle('')
+                setYouTubeSrc('')
+                props.refreshPhotos();
+            })
     };
-
 
     return (
         <>

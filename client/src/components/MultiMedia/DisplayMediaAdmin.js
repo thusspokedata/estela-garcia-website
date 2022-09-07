@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import { useContext } from "react";
 import { AuthContext } from "../../context/auth";
 import { Helmet } from "react-helmet";
-import { OnePhotoCard, AddMedia } from "../index"
+import { OneMediaCard, AddMedia } from "../index"
 
 function DisplayMediaAdmin(props) {
     const { isLoggedIn } = useContext(AuthContext);
@@ -25,31 +25,9 @@ function DisplayMediaAdmin(props) {
             <Helmet>
                 <title>Edit Multi-Media</title>
             </Helmet>
-
-            {/* <AddMedia refreshPhotos={getAllMedias} /> */}
-            <AddMedia />
-
+            <AddMedia refreshPhotos={getAllMedias}/>
             <Container className='row m-auto g-3 px-lg-5' style={{ paddingTop: '6vh' }}>
-                {/* {isLoggedIn && medias?.map((media) => { <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={media._id}>{media.youTubeSrc}</div>})} */}
-
-                {isLoggedIn && medias?.map(function (media) {
-
-                    // let a = 3
-
-                    // let targetStr = media.youTubeSrc
-                    // let regEx = /watch\?v\=/
-                    // targetStr.replace(regEx, 'embed/')
-                    // targetStr[0].replace('watch?v=', 'embed/')
-
-                //   console.log(media.slice(0, 5))
-
-                    // 'embed/' = 'watch?v='
-                    // console.log(response.data.multiMedia.youTubeSrc);
-
-
-                    return <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={media._id}>{media}</div>
-                })}
-
+                {isLoggedIn && medias?.map((media) => <OneMediaCard key={media._id} media={media} />)}
             </Container>
         </>
     )

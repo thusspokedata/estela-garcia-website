@@ -27,12 +27,12 @@ function UploadPhotos(props) {
                     .then((response) => {
                         if (response) {
                             Swal.fire({
-                              icon: "success",
-                              title: "Your photo is successfully uploaded!",
-                              showConfirmButton: false,
-                              timer: 1500,
+                                icon: "success",
+                                title: "Your photo is successfully uploaded!",
+                                showConfirmButton: false,
+                                timer: 1500,
                             });
-                          }
+                        }
                         setImageSelected('')
                         setTitle('')
                         props.refreshPhotos();
@@ -62,12 +62,12 @@ function UploadPhotos(props) {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                        <Form.Control type="file" placeholder="Choose your file..." onChange={(e) => setImageSelected(e.target.files[0])}/>
+                        <Form.Control type="file" placeholder="Choose your file..." onChange={(e) => setImageSelected(e.target.files[0])} />
                     </Form.Group>
-                
+
                     <Modal.Footer>
                         <Button variant="dark text-white col-12 mx-auto" type="submit">
-                           <TbUpload/>&nbsp;&nbsp;&nbsp;Upload
+                            <TbUpload />&nbsp;&nbsp;&nbsp;Upload
                         </Button>
                     </Modal.Footer>
                 </Form>
