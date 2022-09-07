@@ -23,7 +23,7 @@ function DisplayPhotos(props) {
     return (
         <>
             <Helmet>
-                <title>Estela García | Gallery</title>
+                <title>Estela García | Edit My Gallery</title>
             </Helmet>
 
             <UploadPhotos refreshPhotos={getAllPhotos} />
