@@ -6,7 +6,7 @@ function OnePhotoCard({ gallery }) {
 
     return (
         <div >
-            <Link to={`/photos/${_id}`} style={{textDecoration:'none',color:'black' }}>
+            <Link to={`/admin/photos/${_id}`} style={{textDecoration:'none',color:'black' }}>
                     <img src={imageUrl}  alt={imageUrl} height='200' width='290' style={{ objectFit: 'cover' }}/>
                     <p style={{padding:'6px' }}>{title}</p>
             </Link >

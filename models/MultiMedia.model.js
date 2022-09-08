@@ -2,9 +2,9 @@ const { Schema, model } = require("mongoose");
 
 const multiMediaSchema = new Schema(
     {
-        title: String,
+        title: {type: String, required: true }, 
         
-        youTubeSrc: String,
+        youTubeSrc: {type: String, required: true }
     },
     {
         timestamps: true,

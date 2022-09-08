@@ -8,6 +8,7 @@ import {
   EditGalleryPhotoPage,
   MultiMediaPage,
   AddMultiMediaPage,
+  EditMultiMediaPage,
   Concerts,
 } from "./pages";
 import {
@@ -25,7 +26,6 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/photos" element={<GalleryPage />} />
-        <Route path="/photos/:photoId" element={<EditGalleryPhotoPage />} />
         <Route path="/medias" element={<MultiMediaPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/login" element={<Login />} />
@@ -39,10 +39,26 @@ function App() {
           }
         />
         <Route
+          path="/admin/photos/:photoId"
+          element={
+            <ProtectedRoute redirectTo="/">
+              <EditGalleryPhotoPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path="/admin/medias"
           element={
             <ProtectedRoute redirectTo="/">
               <AddMultiMediaPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/medias/:mediaId"
+          element={
+            <ProtectedRoute redirectTo="/">
+              <EditMultiMediaPage />
             </ProtectedRoute>
           }
         />

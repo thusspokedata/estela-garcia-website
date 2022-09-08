@@ -8,59 +8,60 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
+import { OneMediaCard } from "../components";
 
 
 
-function EditGalleryPhotoPage(props) {
+function EditMultiMediaPage(props) {
   const [title, setTitle] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const { photoId } = useParams();
+  const [youTubeSrc, setYouTubeSrc] = useState("");
+  const { mediaId } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get(`/api/admin/photos/${photoId}`)
+      .get(`/api/medias/${mediaId}`)
       .then((response) => {
-        const onePhoto = response.data;
-        setTitle(onePhoto.title);
-        setImageUrl(onePhoto.imageUrl);
+        const oneMedia = response.data;
+        setTitle(oneMedia.title);
+        setYouTubeSrc(oneMedia.youTubeSrc);
       })
       .catch((error) => console.log(error));
-  }, [photoId]);
+  }, [mediaId]);
 
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const requestBody = { title };
     axios
-      .put(`/api/admin/photos/${photoId}`, requestBody)
+      .put(`/api/admin/medias/${mediaId}`, requestBody)
       .then((response) => {
         if (response) {
           Swal.fire({
             icon: "success",
-            title: "Your title is changed!",
+            title: "Your media title is changed!",
             showConfirmButton: false,
             timer: 1500,
           });
         }
-        navigate("/admin/photos");
+        navigate("/admin/medias");
       });
   };
 
   const deletePhoto = () => {
 
     axios
-      .delete(`/api/admin/photos/${photoId}`)
+      .delete(`/api/admin/medias/${mediaId}`)
       .then((response) => {
         if (response) {
           Swal.fire({
             icon: "success",
-            title: "Your photo is deleted!",
+            title: "Your media link is deleted!",
             showConfirmButton: false,
             timer: 1500,
           });
         }
-        navigate("/admin/photos");
+        navigate("/admin/medias");
       })
       .catch((err) => console.log(err));
   };
@@ -70,12 +71,13 @@ function EditGalleryPhotoPage(props) {
   return (
     <>
       <Helmet>
-        <title>Edit Gallery</title>
+        <title>Edit Muilt-Media</title>
       </Helmet>
       <Container className="d-flex justify-content-center mt-3 align-items-center EditGalleryPhotoPage-md">
 
         <Col className="col-md-4 col-xl-3 p-3" >
-          <img src={imageUrl} alt={imageUrl} className='EditGalleryPhotoPage-img' />
+          {/* <img src={imageUrl} alt={imageUrl} className='EditGalleryPhotoPage-img' /> */}
+          {/* <OneMediaCard/> */}
         </Col>
 
         <Col className="col-md-6 p-3">
@@ -83,18 +85,18 @@ function EditGalleryPhotoPage(props) {
           <Row className="col-md-11 col-xl-9 m-auto" >
             <Form onSubmit={handleFormSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Title of the Photo</Form.Label>
+                <Form.Label>Title of the Media</Form.Label>
                 <Form.Control type="text" placeholder={title} onChange={(e) => setTitle(e.target.value)} />
-                <Form.Text className="text-muted">
-                  You could leave it empty, if you don't want to add title of the photo.
-                </Form.Text>
+                {/* <Form.Text className="text-muted">
+                  You could leave it empty, if you don't want to add title.
+                </Form.Text> */}
               </Form.Group>
               <Button variant="dark text-white col-12 mx-auto mb-sm-3 mb-5" type="submit" >
                 <TbCloudUpload style={iconStyle} />&nbsp;&nbsp;&nbsp;Update Title
               </Button>
 
               <Button variant="danger text-white col-12 col-lg-6 mx-auto" type="submit" onClick={deletePhoto}>
-                <RiDeleteBinLine style={iconStyle} />&nbsp;&nbsp;&nbsp;Delete Photo
+                <RiDeleteBinLine style={iconStyle} />&nbsp;&nbsp;&nbsp;Delete Media
               </Button>
 
             </Form>
@@ -107,4 +109,4 @@ function EditGalleryPhotoPage(props) {
   );
 }
 
-export default EditGalleryPhotoPage;
+export default EditMultiMediaPage;

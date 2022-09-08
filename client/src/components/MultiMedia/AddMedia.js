@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import axios from "axios";
 import { Form, Button, Modal, Container, Row } from "react-bootstrap";
 import Swal from "sweetalert2";
+import { TbUpload } from "react-icons/tb"
 
 function AddMedia(props) {
     const [title, setTitle] = useState("");
@@ -40,6 +41,7 @@ function AddMedia(props) {
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>Title</Form.Label>
                             <Form.Control
+                                required
                                 type="text"
                                 placeholder="title"
                                 name="title"
@@ -51,6 +53,7 @@ function AddMedia(props) {
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>YouTube Link</Form.Label>
                             <Form.Control
+                                required
                                 type="text"
                                 placeholder="paste the YouTube link here"
                                 name="title"
@@ -58,14 +61,11 @@ function AddMedia(props) {
                                 id=""
                                 onChange={(e) => setYouTubeSrc(e.target.value)}
                             />
+
                         </Form.Group>
                         <Modal.Footer>
-                            <Button
-                                variant="dark text-white col-12 mx-auto"
-                                type="submit"
-                                onClick={handleSubmit}
-                            >
-                                Send
+                            <Button variant="dark text-white col-12 mx-auto" type="submit" onClick={handleSubmit}>
+                                <TbUpload />&nbsp;&nbsp;&nbsp;Upload
                             </Button>
                         </Modal.Footer>
                     </Form>

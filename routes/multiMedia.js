@@ -30,6 +30,44 @@ router.get('/medias', (req, res, next) => {
     });
 });
 
+router.get('/admin/medias/:mediaId', (req, res, next) => {
+  const { mediaId } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(mediaId)) {
+    res.status(400).json({ message: "Specified id is not valid" });
+    return;
+  }
+  MultiMedia.findById(mediaId)
+    .then((media) => res.status(200).json(media))
+    .catch((error) => res.json(error));
+});
+
+router.put('/admin/medias/:mediaId', (req, res, next) => {
+  const { mediaId } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(mediaId)) {
+    res.status(400).json({ message: "Specified id is not valid" });
+    return;
+  }
+  MultiMedia.findByIdAndUpdate(mediaId, req.body, { new: true })
+    .then((updatedMedia) => res.json(updatedMedia))
+    .catch((error) => res.json(error));
+});
+
+router.delete('/admin/medias/:mediaId', (req, res, next) => {
+  const { mediaId } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(mediaId)) {
+    res.status(400).json({ message: "Specified id is not valid" });
+    return;
+  }
+
+  MultiMedia.findByIdAndRemove(mediaId)
+    .then(() =>
+      res.json({
+        message: `Photo with ${mediaId} is removed successfully.`,
+      })
+    )
+    .catch((error) => res.json(error));
+});
+
 
 
 
