@@ -22,7 +22,7 @@ function DisplayMedia(props) {
             <Helmet>
                 <title>Edit Multi-Media</title>
             </Helmet>
-            <Container className='row m-auto g-3 px-lg-5' style={{ paddingTop: '3vh' }}>
+            <Container className='row m-auto g-3 px-lg-5' style={{ paddingTop: '2vh',paddingBottom:"16vh" }}>
                 {medias?.map((media) => <OneMediaCard key={media._id} media={media} />)}
             </Container>
         </>

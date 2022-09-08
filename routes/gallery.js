@@ -29,7 +29,7 @@ router.get('/photos', (req, res, next) => {
     });
 });
 
-router.get('/photos/:photoId', (req, res, next) => {
+router.get('/admin/photos/:photoId', (req, res, next) => {
   const { photoId } = req.params;
   if (!mongoose.Types.ObjectId.isValid(photoId)) {
     res.status(400).json({ message: "Specified id is not valid" });
@@ -40,7 +40,7 @@ router.get('/photos/:photoId', (req, res, next) => {
     .catch((error) => res.json(error));
 });
 
-router.put('/photos/:photoId', (req, res, next) => {
+router.put('/admin/photos/:photoId', (req, res, next) => {
   const { photoId } = req.params;
   if (!mongoose.Types.ObjectId.isValid(photoId)) {
     res.status(400).json({ message: "Specified id is not valid" });
@@ -51,7 +51,7 @@ router.put('/photos/:photoId', (req, res, next) => {
     .catch((error) => res.json(error));
 });
 
-router.delete('/photos/:photoId', (req, res, next) => {
+router.delete('/admin/photos/:photoId', (req, res, next) => {
   const { photoId } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(photoId)) {

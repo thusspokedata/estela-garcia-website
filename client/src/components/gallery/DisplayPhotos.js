@@ -81,7 +81,7 @@ function DisplayPhotos(props) {
 
       <Container
         className="row m-auto g-3 px-lg-5"
-        style={{ paddingTop: "1vh" }}
+        style={{ paddingTop: "8vh", paddingBottom:"16vh" }}
       >
         {photos?.map((gallery, index) => (
           <div className="col-xl-3 col-lg-4 col-md-6 col-12" key={gallery._id}>

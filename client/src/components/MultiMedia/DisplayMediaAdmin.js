@@ -26,7 +26,7 @@ function DisplayMediaAdmin(props) {
                 <title>Edit Multi-Media</title>
             </Helmet>
             <AddMedia refreshPhotos={getAllMedias}/>
-            <Container className='row m-auto g-3 px-lg-5' style={{ paddingTop: '6vh' }}>
+            <Container className='row m-auto g-3 px-lg-5' style={{ paddingTop: '2vh',paddingBottom:"16vh" }}>
                 {isLoggedIn && medias?.map((media) => <OneMediaCard key={media._id} media={media} />)}
             </Container>
         </>
