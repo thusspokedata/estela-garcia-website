@@ -9,6 +9,8 @@ import { TbUpload } from "react-icons/tb"
 function AddMedia(props) {
     const [title, setTitle] = useState("");
     const [youTubeSrc, setYouTubeSrc] = useState("");
+    const [errorMessage, setErrorMessage] = useState(undefined);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const requestBody = { title, youTubeSrc }
@@ -27,6 +29,10 @@ function AddMedia(props) {
                 setYouTubeSrc('')
                 props.refreshPhotos();
             })
+            .catch((error) => {
+                const errorDescription = error.response.data.message;
+                setErrorMessage(errorDescription);
+              })
     };
 
     return (
@@ -37,7 +43,7 @@ function AddMedia(props) {
 
             <Container className="d-flex justify-content-center mt-3">
                 <Row className="col-12 col-sm-12 col-lg-6">
-                    <Form action="/api/concerts/add-new" method="post">
+                    <Form>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>Title</Form.Label>
                             <Form.Control

@@ -38,7 +38,7 @@ function EditGalleryPhotoPage(props) {
         if (response) {
           Swal.fire({
             icon: "success",
-            title: "Your title is changed!",
+            title: "Your change is saved!",
             showConfirmButton: false,
             timer: 1500,
           });

@@ -6,6 +6,17 @@ const mongoose = require("mongoose");
 router.post('/medias', (req, res, next) => {
   const {title,youTubeSrc} = req.body;
 
+  if (title === '' || youTubeSrc === '' ) {
+    res.status(400).json({ message: "Provide title and YouTube link" });
+    return;
+  }
+
+  const youTubeSrcRegex = /www\.youtube\.com\/watch\?v\=...........$/
+    if (!youTubeSrcRegex.test(youTubeSrc)) {
+      res.status(400).json({ message: 'Provide a valid YouTube link.' });
+      return;
+    }
+
 
   MultiMedia.create({ title, youTubeSrc })
     .then((createdObj) => {
