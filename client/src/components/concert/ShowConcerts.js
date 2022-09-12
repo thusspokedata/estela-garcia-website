@@ -1,21 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Button, Card, Container, Row, Col } from "react-bootstrap";
+
+import { Card, Container, Row, Col } from "react-bootstrap";
 
 const ShowConcerts = ({ concerts }) => {
   return (
     <>
       {concerts ? (
         <div>
-          {concerts.map((item, i) => (
-            <>
+          {concerts.map((item) => (
+            <div key={item._id}>
               <Container className="d-flex justify-content-center mt-3">
                 <Row>
-                  <Col key={item._id} sm={5}>
+                  <Col sm={5}>
                     <img
                       variant="top"
                       src={item.imageUrl}
-                      alt={`picture restaurant ${item.restoName}`}
+                      alt={`${item.title}`}
                       className="col-10"
                     />
                   </Col>
@@ -27,19 +27,43 @@ const ShowConcerts = ({ concerts }) => {
                         </Card.Text>
                       </div>
                       <div>
-                        <Card.Text className="text-capitalize">
-                          {item.aboutEvent}
+                        <Card.Text className="">{item.aboutEvent}</Card.Text>
+                      </div>
+                      <div>
+                        {item.address ? (
+                          <Card.Text className="text-capitalize">
+                            <b>Address:&nbsp;</b>
+                            <a
+                              href={`https://www.google.com/maps/place/${item.address}+${item.addressNumber},+${item.zipCode}+${item.city}`}
+                              target="_blanc"
+                              className="text-decoration-none"
+                            >
+                              {item.address} {item.addressNumber},&nbsp;
+                              {item.zipCode ? `${item.zipCode},` : ""}{" "}
+                              {item.city}.
+                            </a>
+                          </Card.Text>
+                        ) : (
+                          ""
+                        )}
+                      </div>
+
+                      <div>
+                        <Card.Text className="">
+                          <b>Date:</b> {item.date.slice(8, 10)}-
+                          {item.date.slice(5, 7)}-{item.date.slice(0, 4)}{" "}
+                          {item.date.slice(11, 16)}
                         </Card.Text>
                       </div>
                     </div>
                   </Col>
                 </Row>
               </Container>
-            </>
+            </div>
           ))}
         </div>
       ) : (
-        <h2>There is not concerts on our database</h2>
+        <h2>There are not concerts in database</h2>
       )}
     </>
   );
