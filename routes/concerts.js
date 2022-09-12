@@ -10,11 +10,26 @@ router.get("/concerts", (req, res, next) => {
 });
 
 router.post("/concerts/add-new", (req, res, next) => {
-  const { title, imageUrl, aboutEvent } = req.body;
+  const {
+    title,
+    imageUrl,
+    aboutEvent,
+    address,
+    addressNumber,
+    city,
+    zipCode,
+    date,
+  } = req.body;
+  console.log(date);
   Concert.create({
     title,
     imageUrl,
     aboutEvent,
+    address,
+    addressNumber,
+    city,
+    zipCode,
+    date,
   })
     .then((event) => {
       const { title, _id } = event;

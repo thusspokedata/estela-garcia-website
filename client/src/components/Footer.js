@@ -3,34 +3,33 @@ import { AuthContext } from "../context/auth";
 
 function Footer() {
   const { isLoggedIn, logoutUser } = useContext(AuthContext);
-  const [name1, name2] = [" Wen-Hsuan Liao ", " ThusSpokeData "];
 
   return (
     <div>
-      <footer className="bg-white fixed-bottom">
-        <div className="py-0 border-top">
-          <div className="container d-flex flex-column flex-sm-row justify-content-between">
+      <footer className="bg-white fixed-bottom  mt-1">
+        <div className="border-top">
+          <div className="container d-flex flex-column flex-sm-row justify-content-between pt-2">
             <p className="copyright fs-6 fw-lighter">
               <small>
-                © 2022 · Made with ❤️ by
+                © 2022 · Made with ❤️ by&nbsp;
                 <a
                   // rel="nofollow"
                   rel="noreferrer"
                   href="https://www.linkedin.com/in/wen-hsuan-liao-berlin/"
                   target="_blank"
-                  className="text-dark"
+                  className="text-decoration-none text-primary"
                 >
-                  {name1}
+                  Wen-Hsuan Liao&nbsp;
                 </a>
-                and
+                &&nbsp;
                 <a
                   // rel="nofollow"
                   rel="noreferrer"
                   href="https://thusspokedata.com/"
                   target="_blank"
-                  className="text-dark"
+                  className="text-decoration-none text-primary"
                 >
-                  {name2}
+                  ThusSpokeData
                 </a>
               </small>
             </p>
