@@ -3,15 +3,13 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { RiDeleteBinLine } from "react-icons/ri"
 import { TbCloudUpload } from "react-icons/tb"
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 
-
-
-function EditGalleryPhotoPage(props) {
+function EditGalleryPhotoPage() {
   const [title, setTitle] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const { photoId } = useParams();
@@ -73,35 +71,25 @@ function EditGalleryPhotoPage(props) {
         <title>Edit Gallery</title>
       </Helmet>
       <Container className="d-flex justify-content-center mt-3 align-items-center EditGalleryPhotoPage-md">
+        <Row className="col-12 col-sm-12 col-lg-6 m-auto">
+          <Form onSubmit={handleFormSubmit}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Title of the Photo</Form.Label>
+              <Form.Control type="text" placeholder={title} onChange={(e) => setTitle(e.target.value)} />
+              <Form.Text className="text-muted">
+                You could leave it empty, if you don't want to add title of the photo.
+              </Form.Text>
+            </Form.Group>
+            <Button variant="dark text-white col-12 mx-auto mb-sm-3 mb-5" type="submit" >
+              <TbCloudUpload style={iconStyle} />&nbsp;&nbsp;&nbsp;Update Title
+            </Button>
 
-        <Col className="col-md-4 col-xl-3 p-3" >
-          <img src={imageUrl} alt={imageUrl} className='EditGalleryPhotoPage-img' />
-        </Col>
+            <Button variant="danger text-white col-12 col-lg-6 mx-auto" type="submit" onClick={deletePhoto}>
+              <RiDeleteBinLine style={iconStyle} />&nbsp;&nbsp;&nbsp;Delete Photo
+            </Button>
 
-        <Col className="col-md-6 p-3">
-
-          <Row className="col-md-11 col-xl-9 m-auto" >
-            <Form onSubmit={handleFormSubmit}>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Title of the Photo</Form.Label>
-                <Form.Control type="text" placeholder={title} onChange={(e) => setTitle(e.target.value)} />
-                <Form.Text className="text-muted">
-                  You could leave it empty, if you don't want to add title of the photo.
-                </Form.Text>
-              </Form.Group>
-              <Button variant="dark text-white col-12 mx-auto mb-sm-3 mb-5" type="submit" >
-                <TbCloudUpload style={iconStyle} />&nbsp;&nbsp;&nbsp;Update Title
-              </Button>
-
-              <Button variant="danger text-white col-12 col-lg-6 mx-auto" type="submit" onClick={deletePhoto}>
-                <RiDeleteBinLine style={iconStyle} />&nbsp;&nbsp;&nbsp;Delete Photo
-              </Button>
-
-            </Form>
-          </Row>
-
-        </Col>
-
+          </Form>
+        </Row>
       </Container>
     </>
   );

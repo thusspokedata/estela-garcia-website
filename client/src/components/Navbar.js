@@ -28,11 +28,11 @@ function NavBar() {
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="#aboutMe">About Me</Nav.Link>
                 <Nav.Link href="/photos">Gallery</Nav.Link>
-                <Nav.Link href="/admin/photos/" style={{color:'gray',fontSize:'0.7rem'}}>Add Gallery</Nav.Link>
+                <Nav.Link href="/admin/photos/" style={{ color: 'gray', fontSize: '0.7rem' }}>Edit Gallery</Nav.Link>
                 <Nav.Link href="/medias">Multi-Media</Nav.Link>
-                <Nav.Link href="/admin/medias" style={{color:'gray',fontSize:'0.7rem'}}>Add Multi-Media</Nav.Link>
+                <Nav.Link href="/admin/medias" style={{ color: 'gray', fontSize: '0.7rem' }}>Edit Multi-Media</Nav.Link>
                 <Nav.Link href="/concerts">Concerts</Nav.Link>
-                <Nav.Link href="/concerts/add-new" style={{color:'gray',fontSize:'0.7rem'}}>Add a Concert</Nav.Link>
+                <Nav.Link href="/concerts/add-new" style={{ color: 'gray', fontSize: '0.7rem' }}>Edit Concert</Nav.Link>
                 <Nav.Link href="/contact">Contact</Nav.Link>
               </Nav>
             </>

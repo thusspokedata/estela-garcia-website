@@ -23,11 +23,11 @@ function DisplayPhotosAdmin(props) {
     return (
         <>
             <Helmet>
-                <title>Edit My Gallery</title>
+                <title>Edit Gallery</title>
             </Helmet>
 
             <UploadPhotos refreshPhotos={getAllPhotos} />
-            <Container className='row m-auto g-3 px-lg-5' style={{  paddingTop: "8vh", paddingBottom:"16vh" }}>
+            <Container className='row m-auto g-3 px-lg-5' style={{ paddingTop: "8vh", paddingBottom: "16vh" }}>
                 {isLoggedIn && photos?.map((gallery) => <div className='col-xl-3 col-lg-4 col-md-6 col-12' key={gallery._id}>
                     <OnePhotoCard key={gallery._id} gallery={gallery} />
                 </div>)}

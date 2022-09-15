@@ -13,6 +13,8 @@ export { default as AddMedia } from "../components/MultiMedia/AddMedia.js";
 export { default as DisplayMediaAdmin } from "../components/MultiMedia/DisplayMediaAdmin.js";
 export { default as DisplayMedia } from "../components/MultiMedia/DisplayMedia.js";
 export { default as OneMediaCard } from "../components/MultiMedia/OneMediaCard.js";
+export { default as OneEditBtnCard } from "../components/MultiMedia/OneEditBtnCard.js";
+
 
 
 
