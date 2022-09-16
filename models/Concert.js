@@ -24,6 +24,7 @@ const concertSchema = new Schema(
       trim: true,
     },
     imageUrl: String,
+    publicId: String,
     aboutEvent: {
       type: String,
       require: true,

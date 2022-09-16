@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../../context/auth";
+import { DeleteConcert } from "./DeleteConcerts";
 
 import { Card, Container, Row, Col } from "react-bootstrap";
 
 const ShowConcerts = ({ concerts }) => {
+  const { isLoggedIn } = useContext(AuthContext);
   return (
     <>
       {concerts ? (
@@ -52,9 +55,14 @@ const ShowConcerts = ({ concerts }) => {
                         <Card.Text className="">
                           <b>Date:</b> {item.date.slice(8, 10)}-
                           {item.date.slice(5, 7)}-{item.date.slice(0, 4)}{" "}
-                          {item.date.slice(11, 16)}
+                          {item.date.slice(11, 16)} hs
                         </Card.Text>
                       </div>
+                      {isLoggedIn ? (
+                        <DeleteConcert concertID={item._id} />
+                      ) : (
+                        " "
+                      )}
                     </div>
                   </Col>
                 </Row>

@@ -35,6 +35,7 @@ function AddConcert() {
           zipCode,
           city,
           imageUrl: data.url,
+          publicId: data.public_id,
           aboutEvent,
           date,
         };
