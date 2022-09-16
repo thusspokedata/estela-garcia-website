@@ -32,13 +32,13 @@ function AddMedia(props) {
             .catch((error) => {
                 const errorDescription = error.response.data.message;
                 setErrorMessage(errorDescription);
-              })
+            })
     };
 
     return (
         <>
             <Helmet>
-                <title>Add Media</title>
+                <title>Edit Multi-Media</title>
             </Helmet>
 
             <Container className="d-flex justify-content-center mt-3">

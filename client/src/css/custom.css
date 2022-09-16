@@ -213,28 +213,6 @@
 }
 
 
-
-/* @media screen and (max-width: 768px) {
-    .EditGalleryPhotoPage-md {
-        position: absolute;
-        top: 13%;
-        right: 11%;
-        font-size: 24px;
-        font-family: 'Varela Round';
-        color: white;
-        z-index: 999;
-        cursor: pointer;
-    }
-} */
-
-
-.OneMediaCard-edit-link {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
-}
-
 .OneMediaCard-btn {
     margin-top: 50px;
     margin-bottom: -50px;
