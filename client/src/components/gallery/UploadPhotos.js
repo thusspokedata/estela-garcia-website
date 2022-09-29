@@ -16,13 +16,14 @@ function UploadPhotos(props) {
         data.append("file", imageSelected)
         data.append("upload_preset", "estela-garcia-website")
         data.append("cloud_name", "dsy2gebem")
-        fetch("https://api.cloudinary.com/v1_1/dsy2gebem/image/upload", {
+        fetch("https://api.cloudinary.com/v1_1/dsy2gebem/image/upload/", {
             method: "post",
-            body: data
+            body: data,
         })
             .then(response => response.json())
             .then(data => {
-                const requestBody = { title, imageUrl: data.url };
+                let imgTransTo800 = data.url.replace('upload/', 'upload/w_800,h_800,c_limit/')
+                const requestBody = { title, imageUrl: imgTransTo800 };
                 axios.post('/api/photos', requestBody)
                     .then((response) => {
                         if (response) {
